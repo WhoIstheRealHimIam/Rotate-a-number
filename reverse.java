@@ -5,17 +5,20 @@ public class reverse {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("enter a 3 digit number: ");
+        System.out.print("enter a number: ");
         int num = sc.nextInt();
 
-        int first = num / 100;
-        int second = (num / 10) % 10;
-        int third = num % 10;
+        int number = num;
+        int reverse = 0;
 
-        int reverse = third * 100 + second * 10 + first;
+        while (number != 0){
+            int digit = number % 10;
+            reverse = reverse * 10 + digit;
+            number = number / 10;
+        }
 
-        System.out.println("reversed number = " + reverse);
-
+        
+        System.out.println("the reverse of " + num + " is: " + reverse);
         sc.close();
     }
 
